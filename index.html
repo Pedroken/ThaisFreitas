@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thaís Freitas • Fine Line Tattoo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Ultra-simplified bilingual toggle (PT-BR / EN). Extend as needed.
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggle = document.getElementById("lang-toggle");
+        toggle.addEventListener("change", () => {
+          const lang = toggle.value;
+          document.querySelectorAll("[data-tr]").forEach((el) => {
+            const newText = el.getAttribute(`data-${lang}`) || el.getAttribute("data-pt");
+            el.textContent = newText;
+          });
+          if (typeof applyHeroAnimation === 'function') applyHeroAnimation();
+        });
+      });
+    </script>
+  </head>
+  <body class="font-[Poppins] antialiased text-gray-800 scroll-smooth pt-20 md:pt-24">
+    <!-- NAV -->
+    <header
+      id="main-header"
+      class="fixed inset-x-0 top-0 z-50 bg-white/10 backdrop-blur-lg shadow-sm text-white transition-colors duration-300"
+    >
+      <div class="mx-auto flex max-w-7xl items-center justify-between p-4">
+        <!-- Logo (click → Home) -->
+        <a href="#home" class="text-lg font-semibold tracking-wide">
+          Thaís Freitas
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden gap-6 md:flex">
+          <a href="#orcamentos" class="hover:text-pink-600" data-tr data-pt="Orçamentos" data-en="Quotes" data-de="Angebote" data-it="Preventivi" data-fr="Devis" data-es="Presupuestos">Orçamentos</a>
+          <a href="#workshop" class="hover:text-pink-600" data-tr data-pt="Workshop & Mentoria" data-en="Workshop & Mentoring" data-de="Workshop & Mentoring" data-it="Workshop & Mentoring" data-fr="Atelier & Mentorat" data-es="Taller & Mentoría">Workshop & Mentoria</a>
+          <a href="#galeria" class="hover:text-pink-600" data-tr data-pt="Galeria" data-en="Gallery" data-de="Galerie" data-it="Galleria" data-fr="Galerie" data-es="Galería">Galeria</a>
+          <a href="#contato" class="hover:text-pink-600" data-tr data-pt="Contato" data-en="Contact" data-de="Kontakt" data-it="Contatto" data-fr="Contact" data-es="Contacto">Contato</a>
+          <a href="#evento" class="hover:text-pink-600" data-tr data-pt="Evento" data-en="Event" data-de="Event" data-it="Evento" data-fr="Événement" data-es="Evento">Evento</a>
+        </nav>
+
+        <!-- Language selector + social icons -->
+        <div class="flex items-center gap-4">
+          <select
+            id="lang-toggle"
+            class="rounded bg-white/10 text-white text-sm shadow-sm focus:border-pink-500 focus:ring-pink-500 appearance-none"
+          >
+            <option value="pt">PT</option>
+            <option value="en">EN</option>
+            <option value="de">DE</option>
+            <option value="it">IT</option>
+            <option value="fr">FR</option>
+            <option value="es">ES</option>
+          </select>
+          <a
+            href="https://instagram.com/SEU_PERFIL"
+            target="_blank"
+            aria-label="Instagram"
+            class="hover:text-pink-600"
+            ><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15.5 11.5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M18 6.5h.01"/></svg>
+          </a>
+          <a
+            href="https://pinterest.com/SEU_PERFIL"
+            target="_blank"
+            aria-label="Pinterest"
+            class="hover:text-pink-600"
+            ><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.004C6.48 2.004 2 6.488 2 12.006c0 4.422 2.865 8.181 6.8 9.527-.094-.809-.18-2.052.037-2.937.198-.846 1.275-5.389 1.275-5.389s-.325-.651-.325-1.611c0-1.507.874-2.634 1.959-2.634.924 0 1.369.694 1.369 1.526 0 .93-.591 2.314-.896 3.603-.256 1.082.544 1.964 1.614 1.964 1.936 0 3.425-2.042 3.425-4.99 0-2.607-1.875-4.433-4.55-4.433-3.099 0-4.918 2.322-4.918 4.723 0 .93.358 1.927.805 2.471.089.107.102.201.075.309-.082.34-.27 1.082-.307 1.234-.048.199-.156.242-.361.145-1.345-.63-2.187-2.607-2.187-4.197 0-3.42 2.482-6.566 7.158-6.566 3.753 0 6.67 2.672 6.67 6.242 0 3.73-2.35 6.734-5.607 6.734-1.095 0-2.125-.567-2.477-1.238l-.674 2.56c-.246.954-.913 2.147-1.36 2.876a9.963 9.963 0 002.96.455c5.52 0 10-4.484 10-10.002S17.52 2.004 12 2.004z"/></svg>
+          </a>
+
+          <!-- Mobile burger -->
+          <button
+            id="menu-btn"
+            class="md:hidden focus:outline-none hover:text-pink-600"
+            aria-label="Open Menu"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <nav
+        id="mobile-menu"
+        class="hidden flex-col gap-4 bg-white p-4 md:hidden"
+      >
+        <a href="#orcamentos" class="hover:text-pink-600" data-tr data-pt="Orçamentos" data-en="Quotes" data-de="Angebote" data-it="Preventivi" data-fr="Devis" data-es="Presupuestos">Orçamentos</a>
+        <a href="#workshop" class="hover:text-pink-600" data-tr data-pt="Workshop & Mentoria" data-en="Workshop & Mentoring" data-de="Workshop & Mentoring" data-it="Workshop & Mentoring" data-fr="Atelier & Mentorat" data-es="Taller & Mentoría">Workshop & Mentoria</a>
+        <a href="#galeria" class="hover:text-pink-600" data-tr data-pt="Galeria" data-en="Gallery" data-de="Galerie" data-it="Galleria" data-fr="Galerie" data-es="Galería">Galeria</a>
+        <a href="#contato" class="hover:text-pink-600" data-tr data-pt="Contato" data-en="Contact" data-de="Kontakt" data-it="Contatto" data-fr="Contact" data-es="Contacto">Contato</a>
+        <a href="#evento" class="hover:text-pink-600" data-tr data-pt="Evento" data-en="Event" data-de="Event" data-it="Evento" data-fr="Événement" data-es="Evento">Evento</a>
+      </nav>
+      <script>
+        const btn = document.getElementById("menu-btn");
+        const menu = document.getElementById("mobile-menu");
+        btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+      </script>
+    </header>
+
+    <!-- HERO / HOME -->
+<section id="home" class="relative -mt-20 md:-mt-24 min-h-[90vh] flex items-center bg-cover bg-center">
+  <style>
+    #home{
+      background:url('https://images.squarespace-cdn.com/content/v1/667d017edd0ac122109f14a4/fc1c4442-35dc-405c-8ac2-40322297d502/IMG_0421.jpeg?format=2500w') center/cover no-repeat;
+    }
+    #home::before{
+      content:'';
+      position:absolute;inset:0;
+      background:linear-gradient(135deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,.45) 100%);
+    }
+  </style>
+
+  <div class="relative z-20 mx-auto flex w-full max-w-7xl flex-col items-center md:items-start justify-between gap-12 px-4 py-12 md:py-16">
+    <!-- Coluna 1 – Título -->
+    <div>
+      <h1 id="hero-title"
+          class="mb-8 text-5xl md:text-7xl font-extrabold leading-tight tracking-tight text-white"
+          data-tr
+          data-pt="Arte que toca a alma"
+          data-en="Nice to meet you!
+I’m your new tattoo artist."
+          data-de="Schön, dich kennenzulernen!
+Ich bin deine neue Tattoo-Künstlerin."
+          data-it="Piacere di conoscerti!
+Sono la tua nuova tatuatrice."
+          data-fr="Ravi de vous rencontrer !
+Je suis votre nouvelle tatoueuse."
+          data-es="¡Encantado de conocerte!
+Soy tu nueva tatuadora.">
+        Bem-vinda!
+        Eu sou a Thais Freitas.
+      </h1>
+    </div>
+
+    <!-- Coluna 2 – Texto + CTA -->
+    <div class="relative z-20 mx-auto flex w-full max-w-7xl flex-col items-center md:items-end justify-between gap-12 px-4 py-12 md:py-16 text-white ">
+
+      <p class="text-lg  text-5xl md:text-2xl le" 
+         data-tr
+         data-pt="Sou Jessica Puska, tatuadora profissional com presença internacional. Em 2025 você me encontra em Bali, mas posso criar o design on‑line para você tatuar onde quiser."
+         data-en="I’m Jessica Puska, a professional tattooist with an international presence. In 2025 you can find me in Bali, but you can also contact me for online tattoo designs and get tattooed anywhere in the world."
+         data-de="Ich bin Jessica Puska, internationale Tattoo‑Künstlerin. 2025 findest du mich auf Bali, kannst aber welt­weit Online‑Designs bei mir anfragen."
+         data-it="Sono Jessica Puska, tatuatrice con esperienza internazionale. Nel 2025 sarò a Bali, ma posso creare design online per essere tatuati ovunque."
+         data-fr="Je suis Jessica Puska, tatoueuse professionnelle présente à l’international. En 2025 je serai à Bali, mais je peux aussi créer votre dessin en ligne pour vous faire tatouer partout dans le monde."
+         data-es="Soy Jessica Puska, tatuadora profesional con presencia internacional. En 2025 estaré en Bali, pero puedo crear diseños en línea para que te tatúes en cualquier lugar.">
+        Uma tatuadora  pronta para te ajudar a criar o projeto dos seus sonhos!
+      </p>
+
+      <a href="#orcamentos"
+         class="inline-block rounded-full bg-yellow-700 px-8 py-3 font-medium text-white shadow-lg transition hover:bg-yellow-800"
+         data-tr
+         data-pt="Solicitar Orçamento"
+         data-en="Enquire your Online Design"
+         data-de="Online‑Design anfragen"
+         data-it="Richiedi un preventivo"
+         data-fr="Demander un devis en ligne"
+         data-es="Solicitar presupuesto">
+        Solicite o Orçamento Aqui
+      </a>
+    </div>
+  </div>
+</section>
+
+    <!-- QUEM SOU EU -->
+    <section id="about" class="relative py-16 md:py-24 bg-white overflow-hidden">
+      <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="absolute inset-0 bg-white opacity-50"></div>
+      <div class="relative z-20 mx-auto max-w-4xl px-4 md:px-0">
+        <div class="bg-white bg-opacity-90 p-8 rounded-lg shadow-lg">
+        <h2 class="mb-8 text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900" data-tr data-pt="Quem sou eu" data-en="About Me" data-de="Über mich" data-it="Chi sono" data-fr="À propos de moi" data-es="Quién soy">Quem sou eu</h2>
+        <p class="leading-relaxed">
+          Meu nome é Thaís Freitas. Sou brasileira, nascida no estado do Rio de Janeiro — conhecida como a cidade maravilhosa, moldada entre mar, montanha e arte. Cresci cercada por um cenário natural exuberante que, desde cedo, me despertou para o universo sensível das formas, das cores e das criações manuais.<br /><br />
+          O desenho e a pintura sempre estiveram presentes na minha vida. Aos seis anos de idade, tive minha primeira obra exposta em uma galeria de arte... <!-- (continue o texto completo que você forneceu) -->
+        </p>
+      </div>
+    </div>
+    </section>
+
+    <!-- ORÇAMENTOS -->
+    <section id="orcamentos" class="bg-gray-50 py-16 md:py-24">
+      <div class="mx-auto max-w-4xl px-4 md:px-0">
+        <h2 class="mb-8 text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900" data-tr data-pt="Orçamentos" data-en="Quotes" data-de="Angebote" data-it="Preventivi" data-fr="Devis" data-es="Presupuestos">Orçamentos</h2>
+        <p class="mb-8 leading-relaxed" data-tr data-pt="Para solicitar um orçamento, preencha o formulário abaixo ou entre em contato por Telegram, Instagram Direct ou e-mail. Informe tamanho, localização no corpo, referências e disponibilidade de datas." data-en="To request a quote, fill out the form below or contact me via Telegram, Instagram Direct, or email. Please include size, body placement, references, and preferred dates." data-de="Um ein Angebot anzufordern, fülle das untenstehende Formular aus oder kontaktiere mich über Telegram, Instagram Direct oder E‑Mail. Bitte gib Größe, Körperstelle, Referenzen und bevorzugte Termine an." data-it="Per richiedere un preventivo, compila il modulo qui sotto o contattami tramite Telegram, Instagram Direct o email. Indica dimensioni, posizione sul corpo, referenze e date preferite." data-fr="Pour demander un devis, remplissez le formulaire ci‑dessous ou contactez‑moi via Telegram, Instagram Direct ou e‑mail. Veuillez indiquer la taille, l’emplacement sur le corps, des références et vos dates préférées." data-es="Para solicitar un presupuesto, completa el formulario a continuación o contáctame por Telegram, Instagram Direct o correo electrónico. Incluye tamaño, ubicación en el cuerpo, referencias y fechas preferidas.">
+          Para solicitar um orçamento...
+        </p>
+        <div class="grid gap-6 md:grid-cols-3">
+          <a href="https://t.me/SEUUSER" target="_blank" class="rounded-lg border p-6 flex items-center justify-center gap-2 hover:border-pink-600">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-600 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 6.627 5.373 12 12 12 6.628 0 12-5.373 12-12 0-6.627-5.372-12-12-12zm5.332 8.246l-1.257 5.93c-.095.438-.34.544-.693.342l-1.92-1.417-.927.892c-.103.103-.188.188-.384.188l.136-1.928 3.509-3.168c.152-.136-.033-.212-.235-.076l-4.337 2.728-1.866-.582c-.405-.128-.413-.405.085-.599l7.298-2.808c.333-.128.624.076.518.599z"/>
+            </svg>
+            <span>Telegram</span>
+          </a>
+          <a href="https://instagram.com/SEU_PERFIL" target="_blank" class="rounded-lg border p-6 flex items-center justify-center gap-2 hover:border-pink-600">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-600 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.336 3.608 1.31.975.975 1.248 2.242 1.31 3.608.058 1.266.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.335 2.633-1.31 3.608-.976.975-2.243 1.248-3.609 1.31-1.265.058-1.645.069-4.849.069s-3.584-.012-4.85-.07c-1.365-.062-2.633-.335-3.608-1.31-.975-.976-1.248-2.243-1.31-3.609C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.365.335-2.633 1.31-3.608.976-.975 2.243-1.248 3.609-1.31C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.012 7.052.07 5.776.127 4.602.394 3.678 1.318 2.754 2.242 2.486 3.416 2.429 4.692.07 8.332.069 8.741.069 12s.001 3.668.07 4.948c.058 1.276.326 2.45 1.25 3.374.923.923 2.098 1.191 3.374 1.249C8.332 23.989 8.741 24 12 24s3.668-.011 4.948-.07c1.276-.058 2.45-.326 3.374-1.25.924-.924 1.191-2.098 1.249-3.374C23.989 15.668 24 15.259 24 12s-.011-3.668-.07-4.948c-.058-1.276-.326-2.45-1.25-3.374-.923-.923-2.097-1.191-3.374-1.249C15.668.011 15.259 0 12 0z"/>
+              <path d="M12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.879 1.44 1.44 0 0 0 0-2.879z"/>
+            </svg>
+            <span>Instagram Direct</span>
+          </a>
+          <a href="mailto:contato@thaisfreitas.art" class="rounded-lg border p-6 flex items-center justify-center gap-2 hover:border-pink-600">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m0 0v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8m18 0L12 3 3 8" />
+            </svg>
+            <span>E-mail</span>
+          </a>
+        </div>
+        <p class="mt-8 text-sm" data-tr data-pt="Atendo em: Rio de Janeiro • São Paulo • Paris • Milão • Berlim (sob agenda)." data-en="I work in: Rio de Janeiro • São Paulo • Paris • Milan • Berlin (by appointment)." data-de="Ich tätowiere in: Rio de Janeiro • São Paulo • Paris • Mailand • Berlin (nach Terminvereinbarung)." data-it="Ricevo a: Rio de Janeiro • São Paulo • Parigi • Milano • Berlino (su appuntamento)." data-fr="Je travaille à : Rio de Janeiro • São Paulo • Paris • Milan • Berlin (sur rendez‑vous)." data-es="Atiendo en: Río de Janeiro • São Paulo • París • Milán • Berlín (con cita previa).">
+          Atendo em: Rio de Janeiro...
+        </p>
+      </div>
+    </section>
+
+    <!-- WORKSHOP & MENTORIA -->
+    <section id="workshop" class="py-16 md:py-24 bg-white">
+      <div class="mx-auto max-w-4xl px-4 md:px-0">
+        <h2 class="mb-8 text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900" data-tr data-pt="Workshop & Mentoria" data-en="Workshop & Mentoring" data-de="Workshop & Mentoring" data-it="Workshop & Mentoring" data-fr="Atelier & Mentorat" data-es="Taller & Mentoría">Workshop & Mentoria</h2>
+        <p class="leading-relaxed" data-tr data-pt="Ofereço workshops on-line e presenciais voltados à técnica fine line botânica, além de mentorias individuais para artistas em ascensão. Confira abaixo as próximas datas ou inscreva-se na lista de espera." data-en="I offer online and in-person workshops focused on botanical fine-line technique, plus one-on-one mentoring for rising artists. See upcoming dates or join the wait-list." data-de="Ich biete Online- und Präsenzworkshops zur botanischen Fine‑Line‑Technik sowie individuelles Mentoring für aufstrebende Künstler an. Sieh dir die nächsten Termine an oder trage dich in die Warteliste ein." data-it="Offro workshop online e in presenza dedicati alla tecnica fine line botanica, oltre a mentoring individuale per artisti emergenti. Consulta le prossime date o iscriviti alla lista d'attesa." data-fr="Je propose des ateliers en ligne et en présentiel consacrés à la technique fine line botanique, ainsi que du mentorat individuel pour les artistes en devenir. Consultez les prochaines dates ou inscrivez‑vous sur la liste d'attente." data-es="Ofrezco talleres online y presenciales centrados en la técnica fine line botánica, además de mentorías individuales para artistas en ascenso. Consulta las próximas fechas o apúntate a la lista de espera.">
+          Ofereço workshops...
+        </p>
+        <!-- Next workshops placeholder -->
+        <div class="mt-8 rounded-lg border p-6 text-center italic" data-tr data-pt="Novas datas em breve — inscreva-se para ser avisada(o)!" data-en="New dates soon — join the wait-list to be notified!" data-de="Neue Termine bald – trag dich in die Warteliste ein, um benachrichtigt zu werden!" data-it="Nuove date presto — iscriviti alla lista d'attesa per essere avvisato/a!" data-fr="Nouvelles dates bientôt — inscrivez‑vous sur la liste d'attente pour être informé(e) !" data-es="Nuevas fechas pronto — apúntate a la lista de espera para ser notificado/a.">
+          Novas datas em breve — inscreva-se para ser avisada(o)!
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section id="galeria" class="bg-gray-50 py-16 md:py-24">
+      <div class="mx-auto max-w-6xl px-4 md:px-0">
+        <h2 class="mb-8 text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900" data-tr data-pt="Galeria" data-en="Gallery" data-de="Galerie" data-it="Galleria" data-fr="Galerie" data-es="Galería">Galeria</h2>
+        <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <!-- 12-15 placeholder images → replace with real ones -->
+          <template id="gallery-template">
+            <figure class="overflow-hidden rounded-lg shadow-md">
+              <img src="" alt="Fine‑line tattoo demo" class="h-60 w-full object-cover transition hover:scale-110 opacity-0" />
+            </figure>
+          </template>
+        </div>
+        <script>
+          const galContainer = document.querySelector("#galeria .grid");
+          const tpl = document.getElementById("gallery-template").content;
+          const imgs = Array.from({ length: 12 }, (_, i) => `https://picsum.photos/id/${1050 + i}/600/600`);
+          imgs.forEach((url) => {
+            const node = tpl.cloneNode(true);
+            node.querySelector("img").src = url;
+            const imgEl = node.querySelector("img");
+            imgEl.onload = () => imgEl.classList.remove('opacity-0');
+            galContainer.appendChild(node);
+          });
+        </script>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="py-16 md:py-24 bg-white">
+      <div class="mx-auto max-w-4xl px-4 md:px-0">
+        <h2 class="mb-8 text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900" data-tr data-pt="Contato" data-en="Contact" data-de="Kontakt" data-it="Contatto" data-fr="Contact" data-es="Contacto">Contato</h2>
+        <p class="mb-8" data-tr data-pt="Para orçamentos, visite a aba Orçamentos. Para convites, parcerias ou imprensa, envie um e-mail." data-en="For quotes, visit the Quotes section. For invitations, partnerships, or press, please email." data-de="Für Angebote besuche den Abschnitt Angebote. Für Einladungen, Partnerschaften oder Presseanfragen schreibe mir bitte eine E‑Mail." data-it="Per preventivi, visita la sezione Preventivi. Per inviti, partnership o stampa, inviami un'email." data-fr="Pour les devis, rendez‑vous à la section Devis. Pour les invitations, partenariats ou presse, veuillez envoyer un e‑mail." data-es="Para presupuestos, visita la sección Presupuestos. Para invitaciones, colaboraciones o prensa, envía un correo electrónico.">
+          Para orçamentos...
+        </p>
+        <div class="space-y-4">
+          <p class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m0 0v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8m18 0L12 3 3 8" />
+            </svg>
+            <strong>Email:</strong> <a href="mailto:contato@thaisfreitas.art" class="text-pink-600 hover:underline">contato@thaisfreitas.art</a>
+          </p>
+          <p class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-600 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.336 3.608 1.31.975.975 1.248 2.242 1.30 3.608.058 1.266.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.335 2.633-1.30 3.608-.976.975-2.243 1.248-3.609 1.31-1.265.058-1.645.069-4.849.069s-3.584-.012-4.85-.07c-1.365-.062-2.633-.335-3.608-1.31-.975-.976-1.248-2.243-1.30-3.609C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.365.335-2.633 1.30-3.608.976-.975 2.243-1.248 3.609-1.31C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.012 7.052.07 5.776.127 4.602.394 3.678 1.318 2.754 2.242 2.486 3.416 2.429 4.692.07 8.332.069 8.741.069 12s.001 3.668.07 4.948c.058 1.276.326 2.45 1.25 3.374.923.923 2.098 1.191 3.374 1.249C8.332 23.989 8.741 24 12 24s3.668-.011 4.948-.07c1.276-.058 2.45-.326 3.374-1.25.924-.924 1.191-2.098 1.249-3.374C23.989 15.668 24 15.259 24 12s-.011-3.668-.07-4.948c-.058-1.276-.326-2.45-1.25-3.374-.923-.923-2.097-1.191-3.374-1.249C15.668.011 15.259 0 12 0z"/>
+              <path d="M12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.879 1.44 1.44 0 0 0 0-2.879z"/>
+            </svg>
+            <strong>Instagram:</strong> <a href="https://instagram.com/SEU_PERFIL" target="_blank" class="text-pink-600 hover:underline">@thaisfreitas</a>
+          </p>
+          <p class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-600 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 6.627 5.373 12 12 12 6.628 0 12-5.373 12-12 0-6.627-5.372-12-12-12zm5.332 8.246l-1.257 5.93c-.095.438-.34.544-.693.342l-1.92-1.417-.927.892c-.103.103-.188.188-.384.188l.136-1.928 3.509-3.168c.152-.136-.033-.212-.235-.076l-4.337 2.728-1.866-.582c-.405-.128-.413-.405.085-.599l7.298-2.808c.333-.128.624.076.518.599z"/>
+            </svg>
+            <strong>Telegram:</strong> <a href="https://t.me/SEUUSER" target="_blank" class="text-pink-600 hover:underline">@thaisfreitas</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTO PLACEHOLDER -->
+    <section id="evento" class="bg-gray-800 py-20 text-center text-white">
+      <div class="mx-auto max-w-3xl px-4 md:px-0">
+        <img src="/img/evento_placeholder.svg" alt="Logo do evento" class="mx-auto mb-6 h-24 w-auto" />
+        <p class="text-xl font-light" data-tr data-pt="Em breve: o maior congresso de fine line do Brasil. Aguarde!" data-en="Coming soon: Brazil's biggest fine-line congress. Stay tuned!" data-de="Demnächst: Der größte Fine‑Line‑Kongress Brasiliens. Bleib dran!" data-it="In arrivo: il più grande congresso di fine line del Brasile. Resta sintonizzato/a!" data-fr="Bientôt : le plus grand congrès de fine line du Brésil. Restez à l'écoute !" data-es="Próximamente: el mayor congreso de fine line de Brasil. ¡Mantente atento/a!">
+          Em breve: o maior congresso de fine line do Brasil. Aguarde!
+        </p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 py-6 text-center text-sm text-gray-400">
+      © <span id="year"></span> Thaís Freitas. Todos os direitos reservados.
+      <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+    </footer>
+    <script>
+    /* Scroll‑reveal: add .reveal to target elements & toggle .show on view */
+    document.addEventListener('DOMContentLoaded', () => {
+      /* pick common textual elements + CTA buttons + images/figures */
+      const targets = document.querySelectorAll('p, a.grid-button, img, figure');
+      targets.forEach(el => el.classList.add('reveal'));
+
+      window.io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            entry.target.dispatchEvent(new Event('reveal'));
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      targets.forEach(el => io.observe(el));
+
+      /* ---------- Hero per‑letter animation ---------- */
+      function splitLetters(el) {
+        const txt = el.textContent.trim();
+        el.innerHTML = '';
+
+        let delayIndex = 0; // only increment on visible letters
+
+        [...txt].forEach(ch => {
+          if (ch === ' ') {
+            // keep normal space so the browser can wrap lines naturally
+            el.appendChild(document.createTextNode(' '));
+          } else if (ch === '\n') {
+            el.appendChild(document.createElement('br'));        // line break
+          } else {
+            const span = document.createElement('span');
+            span.textContent = ch;
+            span.classList.add('char');
+            span.style.transitionDelay = `${delayIndex * 40}ms`;
+            el.appendChild(span);
+            delayIndex++;
+          }
+        });
+      }
+
+      window.splitLetters = splitLetters;
+
+      function applyHeroAnimation(){
+        const heroTitle = document.getElementById('hero-title');
+        if(!heroTitle) return;
+
+        heroTitle.textContent = heroTitle.textContent.trim();   // remove spans antigos
+        splitLetters(heroTitle);
+
+        const chars = heroTitle.querySelectorAll('.char');
+        io.observe(heroTitle);
+        heroTitle.addEventListener('reveal', () => {
+          chars.forEach(c => c.classList.add('show'));
+        }, { once:true });
+      }
+      window.applyHeroAnimation = applyHeroAnimation;
+      applyHeroAnimation();
+    });
+    </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.getElementById('main-header');
+      const hero = document.getElementById('home');
+      const headerHeight = header.offsetHeight;
+      const transitionRange = 200; // pixels over which the fade occurs
+
+      window.addEventListener('scroll', () => {
+        const heroBottom = hero.getBoundingClientRect().bottom;
+        // Compute a 0–1 ratio: 0 when hero bottom is below header, 1 when it's scrolled up by transitionRange
+        const ratio = Math.min(Math.max((headerHeight - heroBottom) / transitionRange, 0), 1);
+        // Interpolate from white (255,255,255) to dark gray (31,41,55)
+        const r = Math.round(255 + (31 - 255) * ratio);
+        const g = Math.round(255 + (41 - 255) * ratio);
+        const b = Math.round(255 + (55 - 255) * ratio);
+        header.style.color = `rgb(${r},${g},${b})`;
+      });
+    });
+  </script>
+</body>
+<style>
+/* --- Scroll‑reveal animation --- */
+
+/* default slide‑up + fade */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:opacity .8s cubic-bezier(.23,1,.32,1),
+             transform .8s cubic-bezier(.23,1,.32,1);
+}
+.reveal.show{
+  opacity:1;
+  transform:none;
+}
+
+/* slide‑in from the sides */
+.reveal-left{opacity:0;transform:translateX(-40px);}
+.reveal-right{opacity:0;transform:translateX(40px);}
+.reveal-left.show,
+.reveal-right.show{
+  opacity:1;
+  transform:none;
+}
+
+/* subtle zoom‑in (nice for images) */
+.reveal-zoom{opacity:0;transform:scale(.92);}
+.reveal-zoom.show{
+  opacity:1;
+  transform:scale(1);
+}
+
+/* Per‑letter motion (hero) */
+.char{
+  opacity:0;
+  display:inline-block;
+  transform:translateY(40px);
+  transition:opacity .6s cubic-bezier(.23,1,.32,1),
+             transform .6s cubic-bezier(.23,1,.32,1);
+}
+.char.show{
+  opacity:1;
+  transform:none;
+}
+</style>
+<style>[data-tr]{transition:color .3s;} .opacity-0{transition:opacity .6s ease-out;}</style>
+</html>
